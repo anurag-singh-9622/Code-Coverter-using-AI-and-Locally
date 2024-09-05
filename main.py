@@ -8,7 +8,12 @@ import lmstudio as lms
 # Set the title of the app
 st.title("Code Converter")
 options = ['Locally', 'OpenAI']
+api_key = ''
+
+    
 selected_model = st.select_slider("Select the Model", options)
+if selected_model == 'OpenAI': 
+    api_key = st.text_input('Provide your OpenAI API key here', type="password")
 # List of programming languages
 language_extensions = {
     "Python": "py",
@@ -124,7 +129,7 @@ with col1:
             if selected_model == 'Locally':
                 final_text = lms.convert_lang(selected_language_input, selected_language_output, input_text)
             else:
-                final_text = con.convert_lang(selected_language_input, selected_language_output, input_text)
+                final_text = con.convert_lang(selected_language_input, selected_language_output, input_text,api_key)
 
         else:
             final_text = "No text provided!"
