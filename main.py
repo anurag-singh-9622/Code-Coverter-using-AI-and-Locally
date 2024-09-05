@@ -9,7 +9,7 @@ try:
 
     with st.sidebar:        
         # Set the title of the app
-        st.title("examples")
+        st.title("Examples")
         
         # Create a selectbox for language selection
         language = st.selectbox("Select a language", ["Python", "JavaScript", "Go", "Ruby", "Java"])
@@ -209,7 +209,7 @@ try:
         st.info('You could message me on linkdin personally and I could provide you one time api key to use, linkedin https://www.linkedin.com/in/anuragsingh9622/')
         api_key = st.text_input('Provide your OpenAI API key here', type="password")
     if selected_model == 'Locally': 
-        st.warning('You are using Locally model, Use it when you have set up the local server on your machine go to docs to set it up. Link https://lmstudio.ai/', icon="⚠️")
+        st.warning('You are using Locally model, Use it when you have set up the local server on your machine go to docs to set it up. Link https://lmstudio.ai/docs/', icon="⚠️")
     # List of programming languages
     language_extensions = {
         "Python": "py",
