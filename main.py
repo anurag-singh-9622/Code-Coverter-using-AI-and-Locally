@@ -6,6 +6,197 @@ import streamlit as st
 import lmstudio as lms
 
 try:
+
+    with st.sidebar:        
+        # Set the title of the app
+        st.title("examples")
+        
+        # Create a selectbox for language selection
+        language = st.selectbox("Select a language", ["Python", "JavaScript", "Go", "Ruby", "Java"])
+        
+        # Create a container for code examples
+        with st.container():
+            if language == "Python":
+                st.title("Python Code Examples")
+                st.markdown("## Python Code 1")
+                st.code("""
+        x = 5
+        if x > 10:
+            print("x is greater than 10")
+        else:
+            print("x is less than or equal to 10")
+        """, language="python")
+                st.code("""
+        fruits = ["apple", "banana", "cherry"]
+        for fruit in fruits:
+            print(fruit)
+        """, language="python")
+                st.markdown("## Python Code 2")
+                st.code("""
+        def greet(name):
+            print("Hello, " + name)
+        greet("John")
+        """, language="python")
+                st.markdown("## Python Code 3")
+                st.code("""
+        x = 5
+        y = 3
+        print(x + y)
+        """, language="python")
+                st.markdown("## Python Code 4")
+                st.code("""
+        numbers = [1, 2, 3, 4, 5]
+        print(sum(numbers))
+        """, language="python")
+        
+            elif language == "JavaScript":
+                st.title("JavaScript Code Examples")
+                st.markdown("## JavaScript Code 1")
+                st.code("""
+        let x = 5;
+        if (x > 10) {
+            console.log("x is greater than 10");
+        } else {
+            console.log("x is less than or equal to 10");
+        }
+        """, language="javascript")
+                st.markdown("## JavaScript Code 2")
+                st.code("""
+        let fruits = ["apple", "banana", "cherry"];
+        fruits.forEach(fruit => console.log(fruit));
+        """, language="javascript")
+                st.markdown("## JavaScript Code 3")
+                st.code("""
+        function greet(name) {
+            console.log("Hello, " + name);
+        }
+        greet("John");
+        """, language="javascript")
+                st.markdown("## JavaScript Code 4")
+                st.code("""
+        let x = 5;
+        let y = 3;
+        console.log(x + y);
+        """, language="javascript")
+                st.markdown("## JavaScript Code 5")
+                st.code("""
+        let numbers = [1, 2, 3, 4, 5];
+        console.log(numbers.reduce((a, b) => a + b, 0));
+        """, language="javascript")
+        
+            elif language == "Go":
+                st.title("Go Code Examples")
+                st.markdown("## Go Code 1")
+                st.code("""
+        x := 5
+        if x > 10 {
+            fmt.Println("x is greater than 10")
+        } else {
+            fmt.Println("x is less than or equal to 10")
+        }
+        """, language="go")
+                st.markdown("## Go Code 2")
+                st.code("""
+        fruits := []string{"apple", "banana", "cherry"}
+        for _, fruit := range fruits {
+            fmt.Println(fruit)
+        }
+        """, language="go")
+                st.markdown("## Go Code 3")
+                st.code("""
+        package main
+        import "fmt"
+        func greet(name string) {
+            fmt.Println("Hello, " + name)
+        }
+        func main() {
+            greet("John")
+        }
+        """, language="go")
+                st.markdown("## Go Code 4")
+                st.code("""
+        x := 5
+        y := 3
+        fmt.Println(x + y)
+        """, language="go")
+                st.markdown("## Go Code 5")
+                st.code("""
+        numbers := []int{1, 2, 3, 4, 5}
+        sum := 0
+        for _, num := range numbers {
+            sum += num
+        }
+        fmt.Println(sum)
+        """, language="go")
+        
+            elif language == "Ruby":
+                st.title("Ruby Code Examples")
+                st.markdown("## Ruby Code 1")
+                st.code("""
+        puts "Hello, World!"
+        """, language="ruby")
+                st.markdown("## Ruby Code 2")
+                st.code("""
+        x = 5
+        y = 3
+        puts x + y
+        """, language="ruby")
+                st.markdown("## Ruby Code 3")
+                st.code("""
+        fruits = ["apple", "banana", "cherry"]
+        fruits.each do |fruit|
+            puts fruit
+        end
+        """, language="ruby")
+                st.markdown("## Ruby Code 4")
+                st.code("""
+        def greet(name)
+            puts "Hello, #{name}"
+        end
+        greet("John")
+        """, language="ruby")
+                st.markdown("## Ruby Code 5")
+                st.code("""
+        numbers = [1, 2, 3, 4, 5]
+        puts numbers.inject(:+)
+        """, language="ruby")
+            elif language == "Java":
+                st.title("Java Code Examples")
+                st.markdown("## Java Code 1")
+                st.code("""
+        System.out.println("Hello, World!");
+        """, language="java")
+                st.markdown("## Java Code 2")
+                st.code("""
+        int x = 5;
+        int y = 3;
+        System.out.println(x + y);
+        """, language="java")
+                st.markdown("## Java Code 3")
+                st.code("""
+        String[] fruits = {"apple", "banana", "cherry"};
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+        """, language="java")
+                st.markdown("## Java Code 4")
+                st.code("""
+        public static void greet(String name) {
+            System.out.println("Hello, " + name);
+        }
+        greet("John");
+        """, language="java")
+                st.markdown("## Java Code 5")
+                st.code("""
+        int[] numbers = {1, 2, 3, 4, 5};
+        int sum = 0;
+        for (int number : numbers) {
+            sum += number;
+        }
+        System.out.println(sum);
+        """, language="java")
+    
+    
 # Set the title of the app
     st.title("Code Converter")
     options = ['Locally', 'OpenAI']
@@ -14,7 +205,11 @@ try:
         
     selected_model = st.select_slider("Select the Model", options)
     if selected_model == 'OpenAI': 
+        st.info('To use OpenAI option you have to provide your api key. You can get your API key from https://beta.openai.com/account/api-keys')
+        st.info('You could message me on linkdin personally and I could provide you one time api key to use, linkedin https://www.linkedin.com/in/anuragsingh9622/')
         api_key = st.text_input('Provide your OpenAI API key here', type="password")
+    if selected_model == 'Locally': 
+        st.warning('You are using Locally model, Use it when you have set up the local server on your machine go to docs to set it up. Link https://lmstudio.ai/', icon="⚠️")
     # List of programming languages
     language_extensions = {
         "Python": "py",
