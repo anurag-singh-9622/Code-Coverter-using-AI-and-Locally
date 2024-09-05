@@ -44,7 +44,7 @@ To use this tool, you need:
 
 4. **Run the application:**
     ```bash
-    python main.py
+    streamlit run main.py
     ```
 
 #### **Option 2: Using LMStudio for Local LLM Server**
