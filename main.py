@@ -26,24 +26,25 @@ try:
         else:
             print("x is less than or equal to 10")
         """, language="python")
+                st.markdown("## Python Code 2")
                 st.code("""
         fruits = ["apple", "banana", "cherry"]
         for fruit in fruits:
             print(fruit)
         """, language="python")
-                st.markdown("## Python Code 2")
+                st.markdown("## Python Code 3")
                 st.code("""
         def greet(name):
             print("Hello, " + name)
         greet("John")
         """, language="python")
-                st.markdown("## Python Code 3")
+                st.markdown("## Python Code 4")
                 st.code("""
         x = 5
         y = 3
         print(x + y)
         """, language="python")
-                st.markdown("## Python Code 4")
+                st.markdown("## Python Code 5")
                 st.code("""
         numbers = [1, 2, 3, 4, 5]
         print(sum(numbers))
