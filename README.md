@@ -108,7 +108,3 @@ This project is licensed under the **MIT License**.
 
 
 ### 🎨 **Feel free to customize the content further to suit your specific requirements!**
-
----
-
-This version uses emojis and Markdown for a more visually engaging README while adhering to GitHub's formatting rules.
